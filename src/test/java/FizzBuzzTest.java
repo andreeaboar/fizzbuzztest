@@ -1,8 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class FizzBuzzTest {
     @Test
@@ -12,30 +12,64 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void convertToFizzIfMultipleOf3() {
+    public void convertToFizzIfMultipleOfThree() {
         Assert.assertEquals("fizz", FizzBuzzUtil.convert(12));
     }
 
     @Test
-    public void convertToBuzzIfMultipleOf5() {
+    public void convertToBuzzIfMultipleOfFive() {
         Assert.assertEquals("buzz", FizzBuzzUtil.convert(5));
     }
 
     @Test
-    public void convertToFizzBuzzIfMultipleOf3And5() {
+    public void convertToFizzBuzzIfMultipleOfThreeAndFive() {
         Assert.assertEquals("fizzbuzz", FizzBuzzUtil.convert(15));
     }
 
     @Test
-    public void createFizzBuzzListFrom1ToGivenN() {
-        int n = 20;
-        List<String> expectedFizzBuzzList = new ArrayList<>(List.of("1", "2", "alfresco", "4", "buzz", "fizz", "7", "8", "fizz",
-                "buzz", "11", "fizz", "alfresco", "14", "fizzbuzz", "16", "17", "fizz", "19", "buzz"));
-        Assert.assertEquals(expectedFizzBuzzList, FizzBuzzUtil.createFizzBuzzList(n));
+    public void convertToAlfrescoIfContainsThree() {
+        Assert.assertEquals("alfresco", FizzBuzzUtil.convert(3));
     }
 
     @Test
-    public void convertToAlfrescoIfContains3() {
-        Assert.assertEquals("alfresco", FizzBuzzUtil.convert(3));
+    public void countInteger() {
+        Map<String, Long> report = getReport();
+        Long expected = 10L;
+        Assert.assertEquals(expected, report.get("integer"));
+    }
+
+    @Test
+    public void countFizz() {
+        Map<String, Long> report = getReport();
+        Long expected = 4L;
+        Assert.assertEquals(expected, report.get("fizz"));
+    }
+
+    @Test
+    public void countBuzz() {
+        Map<String, Long> report = getReport();
+        Long expected = 3L;
+        Assert.assertEquals(expected, report.get("buzz"));
+    }
+
+    @Test
+    public void countFizzBuzz() {
+        Map<String, Long> report = getReport();
+        Long expected = 1L;
+        Assert.assertEquals(expected, report.get("fizzbuzz"));
+    }
+
+    @Test
+    public void countAlfresco() {
+        Map<String, Long> report = getReport();
+        Long expected = 2L;
+        Assert.assertEquals(expected, report.get("alfresco"));
+    }
+
+    private static Map<String, Long> getReport() {
+        int n = 20;
+        List<String> fizzBuzz = FizzBuzzUtil.createFizzBuzzList(n);
+        Map<String, Long> report = FizzBuzzUtil.createReport(fizzBuzz);
+        return report;
     }
 }
