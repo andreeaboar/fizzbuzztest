@@ -1,3 +1,5 @@
+package com.fizzbuzz;
+
 import java.util.*;
 
 public class FizzBuzzUtil {

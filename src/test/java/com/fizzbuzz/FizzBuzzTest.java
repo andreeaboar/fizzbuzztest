@@ -1,3 +1,6 @@
+package com.fizzbuzz;
+
+import com.fizzbuzz.FizzBuzzUtil;
 import org.junit.Assert;
 import org.junit.Test;
 
