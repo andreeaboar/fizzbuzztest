@@ -2,7 +2,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class FizzBuzzTest {
@@ -21,10 +20,12 @@ public class FizzBuzzTest {
     public void convertToBuzzIfMultipleOf5() {
         Assert.assertEquals("buzz", FizzBuzzUtil.convert(5));
     }
+
     @Test
     public void convertToFizzBuzzIfMultipleOf3And5() {
         Assert.assertEquals("fizzbuzz", FizzBuzzUtil.convert(15));
     }
+
     @Test
     public void createFizzBuzzListFrom1ToGivenN() {
         int n = 20;
@@ -32,5 +33,4 @@ public class FizzBuzzTest {
                 "buzz", "11", "fizz", "13", "14", "fizzbuzz", "16", "17", "fizz", "19", "buzz"));
         Assert.assertEquals(expectedFizzBuzzList, FizzBuzzUtil.createFizzBuzzList(n));
     }
-
 }
