@@ -13,7 +13,7 @@ public class FizzBuzzTest {
 
     @Test
     public void convertToFizzIfMultipleOf3() {
-        Assert.assertEquals("fizz", FizzBuzzUtil.convert(3));
+        Assert.assertEquals("fizz", FizzBuzzUtil.convert(12));
     }
 
     @Test
@@ -29,8 +29,13 @@ public class FizzBuzzTest {
     @Test
     public void createFizzBuzzListFrom1ToGivenN() {
         int n = 20;
-        List<String> expectedFizzBuzzList = new ArrayList<>(List.of("1", "2", "fizz", "4", "buzz", "fizz", "7", "8", "fizz",
-                "buzz", "11", "fizz", "13", "14", "fizzbuzz", "16", "17", "fizz", "19", "buzz"));
+        List<String> expectedFizzBuzzList = new ArrayList<>(List.of("1", "2", "alfresco", "4", "buzz", "fizz", "7", "8", "fizz",
+                "buzz", "11", "fizz", "alfresco", "14", "fizzbuzz", "16", "17", "fizz", "19", "buzz"));
         Assert.assertEquals(expectedFizzBuzzList, FizzBuzzUtil.createFizzBuzzList(n));
+    }
+
+    @Test
+    public void convertToAlfrescoIfContains3() {
+        Assert.assertEquals("alfresco", FizzBuzzUtil.convert(3));
     }
 }
