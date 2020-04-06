@@ -13,8 +13,12 @@ import java.util.Map;
 @RestController
 @RequestMapping("/fizzbuzzintegers")
 public class FizzBuzzIntegerController {
-    @Autowired
     private FizzBuzzIntegerService fizzBuzzIntegerService;
+
+    @Autowired
+    public FizzBuzzIntegerController(FizzBuzzIntegerService fizzBuzzIntegerService) {
+        this.fizzBuzzIntegerService  = fizzBuzzIntegerService;
+    }
 
     @GetMapping
     public ResponseEntity<List<FizzBuzzInteger>> getAll() {

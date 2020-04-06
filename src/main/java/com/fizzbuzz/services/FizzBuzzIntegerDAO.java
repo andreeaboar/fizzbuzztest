@@ -10,8 +10,12 @@ import java.util.List;
 
 @Repository
 public class FizzBuzzIntegerDAO {
-    @Autowired
     private  EntityManager entityManager;
+
+    @Autowired
+    public FizzBuzzIntegerDAO (EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 
     public List<FizzBuzzInteger> getAll() {
         Query query = entityManager.createQuery("from FizzBuzzInteger");
