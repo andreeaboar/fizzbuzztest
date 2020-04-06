@@ -16,15 +16,15 @@ public class FizzBuzzApp {
 //    public static void main(String[] args) {
 //        Scanner in = new Scanner(System.in);
 //        int n = in.nextInt();
-//        List<String> list = com.fizzbuzz.FizzBuzzUtil.createFizzBuzzList(n);
-//        Map<String, Long> report = com.fizzbuzz.FizzBuzzUtil.createReport(list);
+//        List<String> list = com.fizzbuzz.services.FizzBuzzUtil.createFizzBuzzList(n);
+//        Map<String, Long> report = com.fizzbuzz.services.FizzBuzzUtil.createReport(list);
 //        printOutput(list, report);
 //    }
 //
 //
 //    public static void printOutput(List<String> list, Map<String, Long> report) {
-//        com.fizzbuzz.FizzBuzzUtil.printFizzBuzz(list);
+//        com.fizzbuzz.services.FizzBuzzUtil.printFizzBuzz(list);
 //        System.out.println("\n");
-//        com.fizzbuzz.FizzBuzzUtil.printReport(report);
+//        com.fizzbuzz.services.FizzBuzzUtil.printReport(report);
 //    }
 //}

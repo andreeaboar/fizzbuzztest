@@ -1,4 +1,4 @@
-package com.fizzbuzz;
+package com.fizzbuzz.services;
 
 import java.util.*;
 
