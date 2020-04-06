@@ -11,12 +11,8 @@ import java.util.Map;
 
 @Service
 public class FizzBuzzIntegerService {
-    private FizzBuzzIntegerDAO fizzBuzzIntegerDAO;
-
     @Autowired
-    public FizzBuzzIntegerService(FizzBuzzIntegerDAO fizzBuzzIntegerDAO){
-        this.fizzBuzzIntegerDAO = fizzBuzzIntegerDAO;
-    }
+    private FizzBuzzIntegerDAO fizzBuzzIntegerDAO;
 
     @Transactional
     public List<FizzBuzzInteger> getAll() {

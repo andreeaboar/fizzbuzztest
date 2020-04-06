@@ -10,15 +10,11 @@ import java.util.List;
 
 @Repository
 public class FizzBuzzIntegerDAO {
+    @Autowired
     private  EntityManager entityManager;
 
-    @Autowired
-    public FizzBuzzIntegerDAO(EntityManager entityManager){
-        this.entityManager = entityManager;
-    }
-
     public List<FizzBuzzInteger> getAll() {
-        Query query = entityManager.createQuery("from FizzBuzzIntegers");
+        Query query = entityManager.createQuery("from FizzBuzzInteger");
         List<FizzBuzzInteger> fizzBuzzIntegers = query.getResultList();
         return fizzBuzzIntegers;
     }
@@ -33,7 +29,7 @@ public class FizzBuzzIntegerDAO {
     }
 
     public void delete(Integer id) {
-        Query query = entityManager.createQuery("delete from FizzBuzzIntegers where id=:id");
+        Query query = entityManager.createQuery("delete from FizzBuzzInteger where id=:id");
         query.setParameter("id", id);
         query.executeUpdate();
     }

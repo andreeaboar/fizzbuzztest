@@ -3,7 +3,7 @@ package com.fizzbuzz.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "FizzBuzzIntegers")
+@Table(name = "FizzBuzzInteger")
 public class FizzBuzzInteger {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
